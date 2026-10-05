@@ -1,0 +1,66 @@
+/* KRONOS Design Tokens - Swiss Style & Emil Kowalski Principles */
+:root {
+  /* Cores Neutras e Estrutura Suíça */
+  --bg-page: #F8FAFC;
+  --bg-surface: #FFFFFF;
+  --bg-subtle: #F1F5F9;
+  --bg-muted: #E2E8F0;
+  
+  --border-light: #E2E8F0;
+  --border-strong: #CBD5E1;
+  --border-focus: #0F172A;
+
+  /* Tipografia */
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #94A3B8;
+  --text-inverse: #FFFFFF;
+
+  /* Cores de Acento Funcional (Sem exageros artificiais) */
+  --accent-emerald: #059669;
+  --accent-emerald-light: #ECFDF5;
+  --accent-emerald-border: #A7F3D0;
+  
+  --accent-rose: #E11D48;
+  --accent-rose-light: #FFF1F2;
+  --accent-rose-border: #FECDD3;
+
+  --accent-blue: #2563EB;
+  --accent-blue-light: #EFF6FF;
+  
+  --accent-amber: #D97706;
+  --accent-amber-light: #FFFBEB;
+
+  --accent-violet: #7C3AED;
+  --accent-violet-light: #F5F3FF;
+
+  /* Espaçamentos Suíços (Escala de 4px / 8px) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+
+  /* Raios de borda contidos e precisos */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-full: 9999px;
+
+  /* Sombras refinadas (quase imperceptíveis, expressando profundidade limpa) */
+  --shadow-subtle: 0 1px 2px 0 rgba(15, 23, 42, 0.04);
+  --shadow-card: 0 1px 3px 0 rgba(15, 23, 42, 0.05), 0 1px 2px -1px rgba(15, 23, 42, 0.05);
+  --shadow-dropdown: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.06);
+  --shadow-modal: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.06);
+
+  /* Curvas de Bézier e Transições de Emil Kowalski */
+  --ease-out-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 150ms;
+  --duration-normal: 220ms;
+  --duration-smooth: 320ms;
+}

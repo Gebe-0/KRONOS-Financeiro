@@ -1,0 +1,66 @@
+/* Emil Kowalski Animation System */
+
+/* Fade-in suave de entrada para componentes novos */
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes modalBackdropIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeInSlideUp var(--duration-normal) var(--ease-out-spring) forwards;
+}
+
+.animate-pop-in {
+  animation: fadeInScale var(--duration-fast) var(--ease-out-spring) forwards;
+}
+
+/* Microinteração de clique tátil recomendada por Emil Kowalski */
+.interactive-tap {
+  transition: transform var(--duration-fast) var(--ease-out-spring), background-color var(--duration-fast) ease;
+}
+
+.interactive-tap:active {
+  transform: scale(0.97);
+}
+
+/* Hover suave em cards e itens de lista */
+.hover-subtle-lift {
+  transition: transform var(--duration-normal) var(--ease-out-spring), border-color var(--duration-fast) ease, box-shadow var(--duration-normal) ease;
+}
+
+.hover-subtle-lift:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-dropdown);
+}
+
+/* Animação de pulsar para indicadores de status */
+@keyframes pulseSubtle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.animate-pulse-subtle {
+  animation: pulseSubtle 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
