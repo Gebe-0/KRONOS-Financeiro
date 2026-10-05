@@ -1,0 +1,40 @@
+.simulator { display: grid; gap: 20px; }
+.simulator-heading h2 { font-size: clamp(20px, 3vw, 28px); letter-spacing: -.03em; }
+.simulator-heading p:last-child { color: var(--text-secondary); font-size: 14px; margin-top: 4px; }
+.simulator-eyebrow { color: var(--accent-emerald); font-size: 11px; font-weight: 800; letter-spacing: .12em; margin-bottom: 6px; }
+.simulator-layout { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(300px, 1fr); gap: 20px; }
+.simulator-card { background: var(--bg-surface); border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 24px; box-shadow: var(--shadow-card); min-width: 0; }
+.simulator-card h3 { font-size: 16px; margin-bottom: 20px; }
+.simulator-field-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.simulator-field { display: grid; gap: 6px; font-size: 12px; font-weight: 600; color: var(--text-secondary); }
+.simulator-input-wrap { display: flex; align-items: center; gap: 8px; border: 1px solid var(--border-strong); border-radius: var(--radius-sm); padding: 0 12px; background: var(--bg-surface); }
+.simulator-input-wrap:focus-within { outline: 2px solid var(--border-focus); outline-offset: 2px; }
+.simulator-input-wrap input { width: 100%; min-width: 0; border: 0; outline: 0; padding: 11px 0; font-size: 15px; font-variant-numeric: tabular-nums; }
+.simulator-input-wrap > span { color: var(--text-secondary); white-space: nowrap; }
+.simulator-note, .simulator-target small { display: block; color: var(--text-secondary); font-size: 12px; line-height: 1.55; margin-top: 18px; }
+.simulator-error { color: var(--accent-rose); font-size: 12px; margin-top: 12px; }
+.simulator-results { display: grid; gap: 20px; }
+.simulator-highlight { background: var(--text-primary); color: var(--text-inverse); }
+.simulator-highlight > p, .simulator-target > div p { font-size: 13px; margin-bottom: 8px; }
+.simulator-highlight > strong { display: block; font-size: clamp(24px, 3vw, 36px); letter-spacing: -.04em; overflow-wrap: anywhere; }
+.simulator-breakdown { display: grid; gap: 8px; margin-top: 24px; border-top: 1px solid #475569; padding-top: 16px; }
+.simulator-breakdown span { display: flex; justify-content: space-between; gap: 12px; font-size: 12px; }
+.simulator-target strong { font-size: clamp(20px, 2.5vw, 28px); letter-spacing: -.03em; overflow-wrap: anywhere; }
+.simulator-target > p { color: var(--accent-emerald); font-weight: 700; font-size: 13px; margin-top: 16px; }
+.simulator-section-title { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.simulator-section-title span { color: var(--text-secondary); font-size: 12px; }
+.simulator-bars { display: flex; align-items: end; gap: 4px; height: 210px; border-bottom: 1px solid var(--border-strong); overflow-x: auto; margin-top: 18px; }
+.simulator-bar-column { flex: 1 0 15px; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: end; gap: 4px; color: var(--text-secondary); font-size: 10px; }
+.simulator-bar-stack { position: relative; width: min(100%, 20px); min-height: 2px; background: var(--accent-emerald); border-radius: 3px 3px 0 0; overflow: hidden; }
+.simulator-bar-contribution { position: absolute; bottom: 0; width: 100%; background: var(--text-primary); }
+.simulator-legend { display: flex; gap: 20px; flex-wrap: wrap; font-size: 12px; color: var(--text-secondary); margin: 14px 0 20px; }
+.simulator-legend span { display: flex; align-items: center; gap: 6px; }
+.simulator-legend i { display: inline-block; width: 9px; height: 9px; background: var(--accent-emerald); border-radius: 2px; }
+.simulator-legend span:last-child i { background: var(--text-primary); }
+.simulator-table-scroll { max-height: 430px; overflow: auto; }
+.simulator-table { border-collapse: collapse; width: 100%; min-width: 670px; font-size: 12px; font-variant-numeric: tabular-nums; }
+.simulator-table th, .simulator-table td { padding: 10px 12px; border-bottom: 1px solid var(--border-light); text-align: right; white-space: nowrap; }
+.simulator-table th:first-child { text-align: left; }
+.simulator-table thead { position: sticky; top: 0; background: var(--bg-subtle); }
+@media (max-width: 800px) { .simulator-layout { grid-template-columns: 1fr; } }
+@media (max-width: 520px) { .simulator-card { padding: 18px; } .simulator-field-grid { grid-template-columns: 1fr; } }

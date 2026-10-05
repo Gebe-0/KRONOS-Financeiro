@@ -1,13 +1,15 @@
 # Codex - Registro de Projeto
 
 ## Status do Projeto
-- Fase: Concluído com Sucesso! 🚀
+- Fase: Concluído com Sucesso! 🚀 + Simulador de Juros Compostos Integrado
 - Diretório de trabalho: `c:\Users\Administrator\Downloads\Git`
 - Projeto: **KRONOS — Minimalist Financial & Portfolio OS**
 
 ## Resumo do que já foi feito
 1. **Configuração de Ambiente e Skills de Design**:
-   - Instaladas e ativas globalmente: `ui-ux-pro-max`, `frontend-design`, `canvas-design`, pacote completo `emilkowalski/skills` (`animate`, `apple-design`, `emil-design-eng`, etc.) e `web-asset-generator`.
+   - Instaladas tanto no ambiente global quanto na pasta do **Codex** (`C:\Users\Administrator\.codex\skills`):
+     - `ui-ux-pro-max`, `frontend-design`, `canvas-design`, `web-asset-generator`.
+     - Pacote completo de `emilkowalski`: `animate`, `apple-design`, `emil-design-eng`, `improve-animations`, `review-animations`, `find-animation-opportunities`, `pick-ui-library`, `prototype`, `break-ui`, `ask-sonner`, `mobile-native`.
 2. **Arquitetura & Engenharia do KRONOS**:
    - Inicializado projeto moderno em **React 18 + TypeScript + Vite**.
    - Criado sistema de tokens (`tokens.css`, `globals.css`, `animations.css`) aplicando rigorosamente o **Estilo Internacional Suíço** e microinterações de **Emil Kowalski** (curvas de Bézier e feedback tátil `interactive-tap`).
@@ -18,11 +20,23 @@
    - **Extrato de Transações**: Filtros rápidos (Todas, Receitas, Despesas, Categoria), busca em tempo real, modal de cadastro com validação e exclusão.
    - **Carteira de Investimentos**: Ativos de Renda Fixa, Ações B3, FIIs e Criptoativos com cálculo de rentabilidade, lucro/prejuízo e atualização rápida de cotação inline.
    - **Metas Financeiras**: Acompanhamento visual de objetivos com barras de progresso táteis, botões de aporte rápido (+R$ 200, +R$ 500, +R$ 1.000) e animação de comemoração (confetti).
+   - **Simulador de Juros Compostos & Independência Financeira (Novo!)**:
+     - Motor matemático preciso em `src/utils/financialProjection.ts` com cálculo de taxa efetiva mensal, inflação acumulada e meta de independência financeira.
+     - Interface integrada em `src/components/simulator/SimulatorView.tsx` com gráfico de evolução anual e tabela de saldos nominais e reais.
    - **Persistência**: `localStorage` nativo com exportação em arquivo `.json` de backup e restauração rápida dos dados demo.
-4. **Validação & Entrega**:
-   - Build de produção (`npm run build`) validado com **zero erros de TypeScript** e bundle ultra-leve gerado com sucesso.
-   - Servidor local ativo em `http://localhost:5173/` (HTTP 200 OK).
-   - `README.md` completo com badges, visão arquitetural e passo a passo pronto para publicação no GitHub.
+4. **Deploy Automático & CI/CD**:
+   - Configurado workflow `.github/workflows/deploy.yml` para GitHub Pages.
+   - Ajustado `vite.config.ts` com `base: './'` para garantir compatibilidade com qualquer subpasta do GitHub.
+   - `README.md` atualizado com o link do seu perfil (`Gebe-0/KRONOS-Financeiro`) e badges de Live Demo e CI/CD.
 
-## Próximos Passos Sugeridos para o Usuário
-- Inicializar o repositório git (`git init`), fazer o primeiro commit (`git commit -m "feat: KRONOS Financial Dashboard"`) e publicar no seu GitHub pessoal.
+## Próximos Passos para o Usuário
+- Criar o repositório `KRONOS-Financeiro` no GitHub (em `https://github.com/new`).
+- Executar os comandos git para publicar o código e ver a automação colocar o site no ar:
+  ```bash
+  git init
+  git add .
+  git commit -m "feat: KRONOS Financial & Portfolio OS with Simulator and CI/CD"
+  git branch -M main
+  git remote add origin https://github.com/Gebe-0/KRONOS-Financeiro.git
+  git push -u origin main
+  ```

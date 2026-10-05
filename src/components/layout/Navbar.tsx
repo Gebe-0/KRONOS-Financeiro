@@ -2,9 +2,11 @@ import React from 'react';
 import { Layers, Download, RotateCcw } from 'lucide-react';
 import { Button } from '../ui/Button';
 
+export type AppTab = 'overview' | 'transactions' | 'investments' | 'goals' | 'simulator';
+
 interface NavbarProps {
-  activeTab: 'overview' | 'transactions' | 'investments' | 'goals';
-  setActiveTab: (tab: 'overview' | 'transactions' | 'investments' | 'goals') => void;
+  activeTab: AppTab;
+  setActiveTab: (tab: AppTab) => void;
   onExport: () => void;
   onReset: () => void;
 }
@@ -26,6 +28,7 @@ export const Navbar: React.FC<NavbarProps> = ({
       }}
     >
       <div
+        className="kronos-navbar-inner"
         style={{
           maxWidth: '1280px',
           margin: '0 auto',
@@ -79,18 +82,19 @@ export const Navbar: React.FC<NavbarProps> = ({
         </div>
 
         {/* Menu de Abas */}
-        <nav style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+        <nav className="kronos-navbar-tabs" aria-label="Navegação principal" style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
           {[
             { id: 'overview', label: 'Visão Geral' },
             { id: 'transactions', label: 'Transações' },
             { id: 'investments', label: 'Investimentos' },
             { id: 'goals', label: 'Metas' },
+            { id: 'simulator', label: 'Simulador' },
           ].map((tab) => {
             const isActive = activeTab === tab.id;
             return (
               <button
                 key={tab.id}
-                onClick={() => setActiveTab(tab.id as any)}
+                onClick={() => setActiveTab(tab.id as AppTab)}
                 style={{
                   padding: '8px 16px',
                   fontSize: '13px',

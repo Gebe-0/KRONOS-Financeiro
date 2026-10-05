@@ -9,7 +9,8 @@ import {
   ShieldCheck
 } from 'lucide-react';
 import { useFinance } from './context/FinanceContext';
-import { Navbar } from './components/layout/Navbar';
+import { Navbar, type AppTab } from './components/layout/Navbar';
+import { SimulatorView } from './components/simulator/SimulatorView';
 import { StatCard } from './components/metrics/StatCard';
 import { CashFlowChart } from './components/charts/CashFlowChart';
 import { AllocationDonut } from './components/charts/AllocationDonut';
@@ -45,7 +46,7 @@ export const App: React.FC = () => {
     resetData,
   } = useFinance();
 
-  const [activeTab, setActiveTab] = useState<'overview' | 'transactions' | 'investments' | 'goals'>('overview');
+  const [activeTab, setActiveTab] = useState<AppTab>('overview');
   const [isTxModalOpen, setIsTxModalOpen] = useState(false);
   const [isAssetModalOpen, setIsAssetModalOpen] = useState(false);
 
@@ -60,7 +61,7 @@ export const App: React.FC = () => {
 
       <main style={{ flex: 1, maxWidth: '1280px', margin: '0 auto', width: '100%', padding: '32px 24px' }}>
         {/* Bloco Superior de Boas-Vindas e Ação Rápida */}
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '28px', flexWrap: 'wrap', gap: '16px' }}>
+        {activeTab !== 'simulator' && <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '28px', flexWrap: 'wrap', gap: '16px' }}>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <h1 style={{ fontSize: '24px', fontWeight: 800, color: 'var(--text-primary)', letterSpacing: '-0.02em' }}>
@@ -94,10 +95,10 @@ export const App: React.FC = () => {
               Nova Transação
             </Button>
           </div>
-        </div>
+        </div>}
 
         {/* 4 KPIs Fundamentais */}
-        <section style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '16px', marginBottom: '28px' }}>
+        {activeTab !== 'simulator' && <section style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '16px', marginBottom: '28px' }}>
           <StatCard
             title="Patrimônio Total"
             value={netWorth}
@@ -134,7 +135,7 @@ export const App: React.FC = () => {
             icon={<ArrowDownRight size={18} />}
             variant="negative"
           />
-        </section>
+        </section>}
 
         {/* Conteúdo Renderizado Baseado na Aba Ativa */}
         {activeTab === 'overview' && (
@@ -269,6 +270,7 @@ export const App: React.FC = () => {
             onDeleteGoal={deleteGoal}
           />
         )}
+        {activeTab === 'simulator' && <SimulatorView />}
       </main>
 
       {/* Modais de Cadastro */}

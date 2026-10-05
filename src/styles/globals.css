@@ -66,3 +66,26 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+button:focus-visible, a:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+@media (max-width: 900px) {
+  .kronos-navbar-inner {
+    height: auto !important;
+    min-height: 64px;
+    padding: 12px 24px !important;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .kronos-navbar-tabs {
+    order: 3;
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .kronos-navbar-tabs button { white-space: nowrap; }
+}

@@ -1,5 +1,7 @@
 # 🇨🇭 KRONOS — Minimalist Financial & Portfolio OS
 
+[![Deploy to GitHub Pages](https://github.com/Gebe-0/KRONOS-Financeiro/actions/workflows/deploy.yml/badge.svg)](https://github.com/Gebe-0/KRONOS-Financeiro/actions/workflows/deploy.yml)
+[![Live Demo](https://img.shields.io/badge/Demo-Ao_Vivo-059669?style=flat&logo=githubpages&logoColor=white)](https://gebe-0.github.io/KRONOS-Financeiro/)
 [![React](https://img.shields.io/badge/React-18.x-61DAFB?style=flat&logo=react&logoColor=black)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Vite](https://img.shields.io/badge/Vite-8.x-646CFF?style=flat&logo=vite&logoColor=white)](https://vitejs.dev/)
@@ -8,6 +10,8 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 > **KRONOS** é uma aplicação web de gestão patrimonial e acompanhamento de carteira de investimentos com foco em **rigor tipográfico**, clareza contábil e microinterações táteis e refinadas inspiradas no **Estilo Internacional Suíço** e nos princípios de design engineering de **Emil Kowalski**.
+
+🌐 **Experimente a demonstração ao vivo:** [https://gebe-0.github.io/KRONOS-Financeiro/](https://gebe-0.github.io/KRONOS-Financeiro/)
 
 ---
 
@@ -18,7 +22,11 @@
 - 📊 **Visualização Gráfica em SVG Nativo**: Gráficos customizados e ultra-leves (Fluxo de Caixa Mensal Entradas/Saídas e Donut Chart de distribuição de categorias) com zero dependências externas inchadas.
 - 💼 **Carteira Multiativos**: Acompanhamento de Renda Fixa, Ações B3, FIIs e Criptoativos com cálculo dinâmico de rentabilidade, preço médio e edição rápida de cotações inline.
 - 🎯 **Metas Financeiras Interativas**: Barras de progresso com aportes rápidos em um clique (+R$ 200, +R$ 500, +R$ 1.000) e animação comemorativa ao atingir o objetivo.
+- 📈 **Simulador de Independência Financeira**: Projeção mês a mês com aportes no fim de cada mês, evolução anual, saldo corrigido pela inflação e estimativa de quando o patrimônio alcança a meta de retirada.
 - 💾 **Persistência em LocalStorage & Portabilidade**: Seus dados ficam salvos no navegador, com suporte completo para exportar backup em JSON e restaurar o estado de demonstração a qualquer momento.
+
+O simulador converte rentabilidade e inflação anuais efetivas em taxas mensais equivalentes. A meta de independência é `despesas mensais × 12 ÷ taxa anual de retirada`; a comparação usa o patrimônio em reais de hoje. As projeções usam taxas constantes e não incluem impostos nem custos.
+- 🚀 **CI/CD Integrado com GitHub Actions**: A cada commit na branch `main`, o build é automatizado e publicado automaticamente no GitHub Pages.
 
 ---
 
@@ -32,6 +40,7 @@
 | **Microinterações** | Princípios de Física e Curvas Bézier (`cubic-bezier(0.16, 1, 0.3, 1)`) |
 | **Ícones** | [Lucide React](https://lucide.dev/) (Vetoriais, sem uso de emojis como ícones) |
 | **Efeitos Táteis** | Canvas Confetti para celebrações de metas atingidas |
+| **CI/CD & Deploy** | GitHub Actions + GitHub Pages |
 
 ---
 
@@ -45,8 +54,8 @@
 
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/SEU-USUARIO/KRONOS-financial-dashboard.git
-   cd KRONOS-financial-dashboard
+   git clone https://github.com/Gebe-0/KRONOS-Financeiro.git
+   cd KRONOS-Financeiro
    ```
 
 2. **Instale as dependências:**
@@ -69,6 +78,9 @@
 ## 🏛️ Estrutura de Arquitetura
 
 ```
+├── .github/
+│   └── workflows/
+│       └── deploy.yml      # CI/CD automatizado para o GitHub Pages
 ├── src/
 │   ├── components/
 │   │   ├── charts/         # Gráficos SVG (Fluxo de Caixa e Donut)
@@ -95,4 +107,4 @@
 ---
 
 ## 📄 Licença
-Distribuído sob a licença MIT. Veja `LICENSE` para mais informações.
+Distribuído sob a licença MIT.
